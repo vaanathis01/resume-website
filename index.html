@@ -1,9 +1,23 @@
+
+
+        
+
+          
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume - Vaanathi S</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaanathi S | Luxury Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
 
@@ -11,213 +25,1117 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:'Poppins',sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
         }
 
         body{
-            background:#f4f6f9;
+
+            background:
+            radial-gradient(circle at top left,#3b2f0b 0%,transparent 25%),
+            radial-gradient(circle at bottom right,#2a1f05 0%,transparent 25%),
+            #050505;
+
+            color:#f8fafc;
+
+            min-height:100vh;
+
+            overflow-x:hidden;
+
             padding:40px;
+
+            position:relative;
         }
 
-        .resume-container{
-            max-width:850px;
+        /* GOLD BLUR LIGHTS */
+
+        .blur{
+            position:fixed;
+            border-radius:50%;
+            filter:blur(140px);
+            opacity:0.45;
+            z-index:-1;
+        }
+
+        .blur1{
+            width:320px;
+            height:320px;
+            background:#d4af37;
+            top:-120px;
+            left:-80px;
+        }
+
+        .blur2{
+            width:420px;
+            height:420px;
+            background:#b8860b;
+            bottom:-120px;
+            right:-100px;
+        }
+
+        .blur3{
+            width:250px;
+            height:250px;
+            background:#f5d76e;
+            top:40%;
+            left:50%;
+        }
+
+        /* LAYOUT */
+
+        .container{
+            max-width:1400px;
             margin:auto;
-            background:white;
-            padding:40px;
-            border-radius:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            display:grid;
+            grid-template-columns:340px 1fr;
+            gap:40px;
         }
 
-        .header{
-            text-align:center;
-            margin-bottom:30px;
+        /* SIDEBAR */
+
+        .sidebar{
+
+            position:sticky;
+            top:30px;
+            height:fit-content;
+
+            background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.03)
+            );
+
+            backdrop-filter:blur(25px);
+
+            border:1px solid rgba(212,175,55,0.18);
+
+            border-radius:34px;
+
+            padding:40px 28px;
+
+            overflow:hidden;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.55);
+
+            transition:0.5s;
+
+            animation:fadeUp 1s ease;
         }
+
+        .sidebar:hover{
+
+            box-shadow:
+                0 25px 70px rgba(212,175,55,0.15);
+        }
+
+        .sidebar::before{
+
+            content:'';
+            position:absolute;
+            inset:0;
+
+            border-radius:34px;
+            padding:1px;
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(212,175,55,0.9),
+                rgba(245,215,110,0.3),
+                rgba(184,134,11,0.9)
+            );
+
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite:xor;
+
+            opacity:0.5;
+        }
+
+        /* PROFILE IMAGE */
 
         .profile-pic{
-            width:160px;
-            height:160px;
-            border:3px dashed #666;
+
+            width:190px;
+            height:190px;
+
             border-radius:50%;
-            margin:0 auto 20px;
+            object-fit:cover;
+
+            display:block;
+            margin:auto;
+
+            border:5px solid rgba(212,175,55,0.4);
+
+            box-shadow:
+            0 0 40px rgba(212,175,55,0.35),
+            0 0 80px rgba(212,175,55,0.15);
+
+            transition:0.5s;
+        }
+
+        .profile-pic:hover{
+            transform:scale(1.08) rotate(2deg);
+        }
+
+        /* TEXT */
+
+        .name{
+            font-size:38px;
+            font-weight:700;
+            text-align:center;
+            margin-top:24px;
+        }
+
+        .role{
+            text-align:center;
+            margin-top:12px;
+            color:#d6d3d1;
+            line-height:1.8;
+            font-size:14px;
+        }
+
+        /* CONTACT */
+
+        .contact-info{
+            margin-top:35px;
+        }
+
+        .contact-item{
+            display:flex;
+            align-items:center;
+            gap:14px;
+            margin-bottom:20px;
+            color:#f1f5f9;
+            font-size:15px;
+        }
+
+        .contact-item i{
+            color:#d4af37;
+            font-size:18px;
+            text-shadow:0 0 15px rgba(212,175,55,0.7);
+        }
+
+        /* SOCIAL ICONS */
+
+        .social-icons{
+            display:flex;
+            justify-content:center;
+            gap:14px;
+            margin-top:32px;
+        }
+
+        .social-icons a{
+
+            width:52px;
+            height:52px;
+
+            border-radius:50%;
+
             display:flex;
             align-items:center;
             justify-content:center;
-            background:#fafafa;
-            color:#666;
-            font-size:18px;
+
+            text-decoration:none;
+
+            color:#fff;
+
+            background:
+            linear-gradient(
+                145deg,
+                rgba(212,175,55,0.12),
+                rgba(255,255,255,0.04)
+            );
+
+            border:1px solid rgba(212,175,55,0.25);
+
+            transition:0.4s;
         }
 
-        .description{
-            font-size:18px;
-            font-weight:bold;
-            color:#333;
-            margin-bottom:10px;
+        .social-icons a:hover{
+
+            transform:
+                translateY(-5px)
+                scale(1.08);
+
+            background:#d4af37;
+            color:black;
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,0.45);
         }
 
-        .contact-info{
-            color:#555;
-            line-height:1.8;
-            font-size:16px;
-        }
+        /* MAIN CONTENT */
 
-        /* Vertical Table */
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:35px;
-            margin-bottom:30px;
-        }
-
-        th{
-            background:#1f3c88;
-            color:white;
-            padding:12px;
-            width:30%;
-            text-align:left;
-        }
-
-        td{
-            padding:12px;
-            border:1px solid #444;
-            color:#333;
-        }
-
-        table, th, td{
-            border:1px solid #444;
-        }
-
-        /* Social Media Horizontal */
-
-        .social-links{
+        .main-content{
             display:flex;
-            justify-content:space-around;
-            margin:30px 0;
-            font-weight:bold;
-            color:#1f3c88;
+            flex-direction:column;
+            gap:30px;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+
+            position:relative;
+            overflow:hidden;
+
+            background:
+            linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+            );
+
+            backdrop-filter:blur(25px);
+
+            border-radius:36px;
+
+            padding:65px;
+
+            border:1px solid rgba(212,175,55,0.18);
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.55);
+
+            transition:0.5s;
+
+            animation:fadeUp 1s ease;
+        }
+
+        .hero:hover{
+
+            box-shadow:
+                0 25px 80px rgba(212,175,55,0.12);
+        }
+
+        .hero::before{
+
+            content:'';
+            position:absolute;
+            inset:0;
+
+            border-radius:36px;
+            padding:1px;
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(212,175,55,0.9),
+                rgba(245,215,110,0.3),
+                rgba(184,134,11,0.9)
+            );
+
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite:xor;
+
+            opacity:0.5;
+        }
+
+        .hero-badge{
+
+            display:inline-block;
+
+            padding:10px 20px;
+
+            border-radius:50px;
+
+            background:rgba(212,175,55,0.12);
+
+            border:1px solid rgba(212,175,55,0.25);
+
+            margin-bottom:28px;
+
+            font-size:14px;
+        }
+
+        .hero h1{
+
+            font-size:72px;
+            font-weight:800;
+
+            line-height:1;
+
+            letter-spacing:-3px;
+
+            margin-bottom:25px;
+
+            background:
+            linear-gradient(
+                135deg,
+                #ffffff,
+                #d4af37
+            );
+
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+
+        .hero p{
+
+            max-width:720px;
+
+            color:#d6d3d1;
+
+            line-height:1.9;
+
+            font-size:17px;
+
+            font-weight:300;
+        }
+
+        /* BUTTONS */
+
+        .hero-buttons{
+            margin-top:38px;
+            display:flex;
+            gap:18px;
             flex-wrap:wrap;
         }
 
-        .section{
-            margin-top:25px;
+        .download-btn,
+        .secondary-btn{
+
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+
+            padding:16px 30px;
+
+            border-radius:50px;
+
+            text-decoration:none;
+
+            transition:0.4s;
+
+            font-weight:600;
         }
 
-        .section h2{
-            color:#1f3c88;
-            border-bottom:2px solid #1f3c88;
-            display:inline-block;
-            padding-bottom:5px;
-            margin-bottom:10px;
+        .download-btn{
+
+            background:
+            linear-gradient(
+                135deg,
+                #d4af37,
+                #f5d76e
+            );
+
+            color:black;
         }
 
-        .section p{
-            color:#444;
-            font-size:16px;
+        .download-btn:hover{
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            box-shadow:
+                0 0 35px rgba(212,175,55,0.45);
+        }
+
+        .secondary-btn{
+            border:1px solid rgba(212,175,55,0.25);
+            color:#fff;
+        }
+
+        .secondary-btn:hover{
+            background:rgba(212,175,55,0.12);
+            transform:translateY(-4px);
+        }
+
+        /* CARDS */
+
+        .card{
+
+            position:relative;
+
+            overflow:hidden;
+
+            background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.03)
+            );
+
+            backdrop-filter:blur(25px);
+
+            border-radius:32px;
+
+            padding:36px;
+
+            border:1px solid rgba(212,175,55,0.15);
+
+            transition:0.5s;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.5);
+
+            animation:fadeUp 1s ease;
+        }
+
+        .card::before{
+
+            content:'';
+
+            position:absolute;
+
+            inset:0;
+
+            border-radius:32px;
+
+            padding:1px;
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(212,175,55,0.9),
+                rgba(245,215,110,0.3),
+                rgba(184,134,11,0.9)
+            );
+
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite:xor;
+
+            opacity:0.35;
+
+            transition:0.5s;
+        }
+
+        .card:hover::before{
+            opacity:1;
+        }
+
+        .card::after{
+
+            content:'';
+
+            position:absolute;
+
+            top:0;
+            left:-120%;
+
+            width:50%;
+            height:100%;
+
+            background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(212,175,55,0.12),
+                transparent
+            );
+
+            transition:1.2s;
+        }
+
+        .card:hover::after{
+            left:130%;
+        }
+
+        .card:hover{
+
+            transform:
+                translateY(-10px)
+                scale(1.02);
+
+            border:1px solid rgba(212,175,55,0.7);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.6),
+                0 0 40px rgba(212,175,55,0.35);
+
+            animation:bounce 0.5s ease;
+        }
+
+        /* BOUNCE EFFECT */
+
+        @keyframes bounce{
+
+            0%{
+                transform:translateY(0);
+            }
+
+            50%{
+                transform:translateY(-12px);
+            }
+
+            100%{
+                transform:translateY(-8px);
+            }
+        }
+
+        /* TITLES */
+
+        .card h2{
+
+            font-size:30px;
+
+            margin-bottom:30px;
+
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
+
+        .card h2 i{
+
+            color:#d4af37;
+
+            text-shadow:
+            0 0 15px rgba(212,175,55,0.7);
+        }
+
+        /* DETAILS GRID */
+
+        .details-grid{
+
+            display:grid;
+
+            grid-template-columns:
+            repeat(auto-fit,minmax(220px,1fr));
+
+            gap:18px;
+        }
+
+        .detail-box{
+
+            background:rgba(255,255,255,0.04);
+
+            border:1px solid rgba(212,175,55,0.15);
+
+            padding:24px;
+
+            border-radius:24px;
+
+            transition:0.4s;
+        }
+
+        .detail-box:hover{
+
+            transform:translateY(-5px);
+
+            border:1px solid rgba(212,175,55,0.5);
+        }
+
+        .detail-box span{
+            color:#cbd5e1;
+            font-size:13px;
+        }
+
+        .detail-box h4{
+            margin-top:12px;
+            font-size:18px;
+            font-weight:600;
+        }
+
+        /* SKILLS */
+
+        .skills-wrapper{
+            display:flex;
+            flex-wrap:wrap;
+            gap:14px;
+        }
+
+        .skill-pill{
+
+            padding:14px 24px;
+
+            border-radius:40px;
+
+            background:
+            linear-gradient(
+                145deg,
+                rgba(212,175,55,0.12),
+                rgba(255,255,255,0.04)
+            );
+
+            border:1px solid rgba(212,175,55,0.25);
+
+            transition:0.4s;
+
+            font-weight:500;
+        }
+
+        .skill-pill:hover{
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,0.35);
+
+            border:1px solid rgba(212,175,55,0.6);
+        }
+
+        /* PROJECTS */
+
+        .project-box{
+
+            background:rgba(255,255,255,0.04);
+
+            border:1px solid rgba(212,175,55,0.15);
+
+            padding:28px;
+
+            border-radius:26px;
+
+            transition:0.5s;
+
+            margin-bottom:22px;
+        }
+
+        .project-box:hover{
+
+            transform:
+                translateY(-8px)
+                scale(1.02);
+
+            border:1px solid rgba(212,175,55,0.6);
+
+            box-shadow:
+                0 0 35px rgba(212,175,55,0.18);
+        }
+
+        .project-box h3{
+            font-size:24px;
+            margin-bottom:12px;
+        }
+
+        .project-box p{
+            color:#d6d3d1;
+            line-height:1.9;
+        }
+
+        /* LIST */
+
+        .modern-list{
+            display:flex;
+            flex-wrap:wrap;
+            gap:14px;
+        }
+
+        .modern-list div{
+
+            padding:14px 20px;
+
+            background:rgba(255,255,255,0.05);
+
+            border-radius:18px;
+
+            border:1px solid rgba(212,175,55,0.15);
+
+            transition:0.4s;
+        }
+
+        .modern-list div:hover{
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            border:1px solid rgba(212,175,55,0.5);
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,0.18);
+        }
+
+        /* FOOTER */
+
+        footer{
+            text-align:center;
+            padding:20px;
+            color:#cbd5e1;
+            font-size:14px;
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeUp{
+
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1000px){
+
+            .container{
+                grid-template-columns:1fr;
+            }
+
+            .sidebar{
+                position:relative;
+                top:0;
+            }
+
+            .hero{
+                padding:40px;
+            }
+
+            .hero h1{
+                font-size:50px;
+            }
+
+            body{
+                padding:20px;
+            }
         }
 
     </style>
+
 </head>
 
 <body>
 
-    <div class="resume-container">
+    <!-- GOLD BLURS -->
 
-        <!-- Header -->
-        <div class="header">
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
 
-            <div class="profile-pic">
-                Profile Picture
-            </div>
+    <div class="container">
 
-            <div class="description">
-                Student of Peepal Prodigy School, Coimbatore, Tamil Nadu
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+            <img src="image.png" alt="Profile" class="profile-pic">
+
+            <div class="name">Vaanathi S</div>
+
+            <div class="role">
+                Luxury UI Enthusiast • Digital Creator<br>
+                Peepal Prodigy School • Coimbatore
             </div>
 
             <div class="contact-info">
-                <p>Email: vaanathis4@gmail.com</p>
-                <p>Phone: 1234567890</p>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <span>vaanathis4@gmail.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>1234567890</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span>Coimbatore, Tamil Nadu</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>10th Grade Student</span>
+                </div>
+
+            </div>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-github"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
             </div>
 
         </div>
 
-        <!-- Vertical Table -->
+        <!-- MAIN CONTENT -->
 
-        <table>
+        <div class="main-content">
 
-            <tr>
-                <th>Name</th>
-                <td>Vaanathi. S</td>
-            </tr>
+            <!-- HERO -->
 
-            <tr>
-                <th>Email</th>
-                <td>vaanathis4@gmail.com</td>
-            </tr>
+            <div class="hero">
 
-            <tr>
-                <th>Contact</th>
-                <td>1234567890</td>
-            </tr>
+                <div class="hero-badge">
+                    ✨ Creative Student • Public Speaker • Designer
+                </div>
 
-            <tr>
-                <th>Location</th>
-                <td>Coimbatore</td>
-            </tr>
+                <h1>
+                    Building Luxury
+                    Digital Experiences
+                </h1>
 
-            <tr>
-                <th>Qualification</th>
-                <td>10th Grade</td>
-            </tr>
+                <p>
+                    Passionate about premium web design, modern interfaces,
+                    elegant digital experiences, creativity, and futuristic UI concepts.
+                    Focused on building visually engaging and interactive projects.
+                </p>
 
-            <tr>
-                <th>Hobbies</th>
-                <td>Dancing, Reading, Public Speaking</td>
-            </tr>
+                <div class="hero-buttons">
 
-        </table>
+                    
 
-        <!-- Horizontal Social Media -->
+                    
 
-        <div class="social-links">
-            <div>YouTube</div>
-            <div>Twitter</div>
-            <div>Instagram</div>
-            <div>WhatsApp Channel</div>
-        </div>
+                </div>
 
-        <!-- Sections -->
+            </div>
 
-        <div class="section">
-            <h2><b>Skills</b></h2>
-            <p>Communication, Leadership, Creativity, Teamwork</p>
-        </div>
+            <!-- PERSONAL DETAILS -->
 
-        <div class="section">
-            <h2><b>Tech Stack</b></h2>
-            <p>Fresher</p>
-        </div>
+            <div class="card">
 
-        <div class="section">
-            <h2><b>Digital Stack</b></h2>
-            <p>Fresher</p>
-        </div>
+                <h2>
+                    <i class="fa-solid fa-id-card"></i>
+                    Personal Details
+                </h2>
 
-        <div class="section">
-            <h2><b>Work History</b></h2>
-            <p>Fresher</p>
-        </div>
+                <div class="details-grid">
 
-        <div class="section">
-            <h2><b>Projects</b></h2>
-            <p>School Presentations, Creative Posters, Digital Designs</p>
-        </div>
+                    <div class="detail-box">
+                        <span>Name</span>
+                        <h4>Vaanathi S</h4>
+                    </div>
 
-        <div class="section">
-            <h2><b>Accomplishments</b></h2>
-            <p>Participated in Public Speaking and Cultural Activities</p>
+                    <div class="detail-box">
+                        <span>Email</span>
+                        <h4>vaanathis4@gmail.com</h4>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Location</span>
+                        <h4>Coimbatore</h4>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Qualification</span>
+                        <h4>10th Grade</h4>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Hobbies</span>
+                        <h4>Dancing & Reading</h4>
+                    </div>
+
+                    <div class="detail-box">
+                        <span>Interest</span>
+                        <h4>Luxury UI Design</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SKILLS -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-code"></i>
+                    Skills
+                </h2>
+
+                <div class="skills-wrapper">
+
+                    <div class="skill-pill">Communication</div>
+
+                    <div class="skill-pill">Leadership</div>
+
+                    <div class="skill-pill">Public Speaking</div>
+
+                    <div class="skill-pill">Creativity</div>
+
+                    <div class="skill-pill">HTML</div>
+
+                    <div class="skill-pill">CSS</div>
+
+                    <div class="skill-pill">Canva</div>
+
+                    <div class="skill-pill">Presentation Design</div>
+
+                    <div class="skill-pill">Digital Creativity</div>
+
+                    <div class="skill-pill">Teamwork</div>
+
+                </div>
+
+            </div>
+
+            <!-- TECH STACK -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-layer-group"></i>
+                    Tech Stack
+                </h2>
+
+                <div class="modern-list">
+
+                    <div>HTML</div>
+
+                    <div>CSS</div>
+
+                    <div>JavaScript</div>
+
+                    <div>Canva</div>
+
+                    <div>Google Docs</div>
+
+                    <div>PowerPoint</div>
+
+                </div>
+
+            </div>
+
+            <!-- PROJECTS -->
+
+            <div class="card" id="projects">
+
+                <h2>
+                    <i class="fa-solid fa-rocket"></i>
+                    Projects
+                </h2>
+
+                <div class="project-box">
+
+                    <h3>Creative Resume Website</h3>
+
+                    <p>
+                        Designed and developed a premium responsive portfolio website
+                        using HTML and CSS with modern luxury UI effects.
+                    </p>
+
+                </div>
+
+                <div class="project-box">
+
+                    <h3>Presentation Design Projects</h3>
+
+                    <p>
+                        Created visually engaging slides, posters, and educational
+                        presentation designs for school events and activities.
+                    </p>
+
+                </div>
+
+                <div class="project-box">
+
+                    <h3>Public Speaking Activities</h3>
+
+                    <p>
+                        Participated in speech competitions and cultural programs
+                        to improve confidence, communication, and stage presence.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CURRENTLY LEARNING -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-book-open"></i>
+                    Currently Working
+                </h2>
+
+                <div class="modern-list">
+
+                    <div>JavaScript</div>
+
+                    <div>UI/UX Design</div>
+
+                    <div>Animation Design</div>
+
+                    <div>Modern Web Design</div>
+
+                    <div>Frontend Development</div>
+
+                </div>
+
+            </div>
+
+            <!-- Deals In -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-star"></i>
+                    Deals In
+                </h2>
+
+                <div class="modern-list">
+
+                    <div>Web Design</div>
+
+                    <div>Advanced Frontend Development</div>
+
+                    <div>Build Creative Digital Products</div>
+
+                    <div>Create Premium UI Designs</div>
+
+                </div>
+
+            </div>
+
+            <!-- ACHIEVEMENTS -->
+
+            <div class="card">
+
+                <h2>
+                    <i class="fa-solid fa-trophy"></i>
+                    Accomplishments
+                </h2>
+
+                <div class="modern-list">
+
+                    <div>Public Speaking Events</div>
+
+                    <div>Cultural Activities</div>
+
+                    <div>Creative Digital Designs</div>
+
+                    <div>Personal Portfolio Website</div>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                © 2026 Vaanathi S • Crafted with Creativity & Passion ✨
+
+            </footer>
+
         </div>
 
     </div>
 
 </body>
+
 </html>
