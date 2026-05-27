@@ -1,1133 +1,978 @@
 
 
-        
-
-          
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Vaanathi S | Luxury Portfolio</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-
-            background:
-            radial-gradient(circle at top left,#3b2f0b 0%,transparent 25%),
-            radial-gradient(circle at bottom right,#2a1f05 0%,transparent 25%),
-            #050505;
-
-            color:#f8fafc;
-
-            min-height:100vh;
-
-            overflow-x:hidden;
-
-            padding:40px;
-
-            position:relative;
-        }
-
-        /* GOLD BLUR LIGHTS */
-
-        .blur{
-            position:fixed;
-            border-radius:50%;
-            filter:blur(140px);
-            opacity:0.45;
-            z-index:-1;
-        }
-
-        .blur1{
-            width:320px;
-            height:320px;
-            background:#d4af37;
-            top:-120px;
-            left:-80px;
-        }
-
-        .blur2{
-            width:420px;
-            height:420px;
-            background:#b8860b;
-            bottom:-120px;
-            right:-100px;
-        }
-
-        .blur3{
-            width:250px;
-            height:250px;
-            background:#f5d76e;
-            top:40%;
-            left:50%;
-        }
-
-        /* LAYOUT */
-
-        .container{
-            max-width:1400px;
-            margin:auto;
-            display:grid;
-            grid-template-columns:340px 1fr;
-            gap:40px;
-        }
-
-        /* SIDEBAR */
-
-        .sidebar{
-
-            position:sticky;
-            top:30px;
-            height:fit-content;
-
-            background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,0.08),
-                rgba(255,255,255,0.03)
-            );
-
-            backdrop-filter:blur(25px);
-
-            border:1px solid rgba(212,175,55,0.18);
-
-            border-radius:34px;
-
-            padding:40px 28px;
-
-            overflow:hidden;
-
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.55);
-
-            transition:0.5s;
-
-            animation:fadeUp 1s ease;
-        }
-
-        .sidebar:hover{
-
-            box-shadow:
-                0 25px 70px rgba(212,175,55,0.15);
-        }
-
-        .sidebar::before{
-
-            content:'';
-            position:absolute;
-            inset:0;
-
-            border-radius:34px;
-            padding:1px;
-
-            background:
-            linear-gradient(
-                135deg,
-                rgba(212,175,55,0.9),
-                rgba(245,215,110,0.3),
-                rgba(184,134,11,0.9)
-            );
-
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-
-            -webkit-mask-composite:xor;
-
-            opacity:0.5;
-        }
-
-        /* PROFILE IMAGE */
-
-        .profile-pic{
-
-            width:190px;
-            height:190px;
-
-            border-radius:50%;
-            object-fit:cover;
-
-            display:block;
-            margin:auto;
-
-            border:5px solid rgba(212,175,55,0.4);
-
-            box-shadow:
-            0 0 40px rgba(212,175,55,0.35),
-            0 0 80px rgba(212,175,55,0.15);
-
-            transition:0.5s;
-        }
-
-        .profile-pic:hover{
-            transform:scale(1.08) rotate(2deg);
-        }
-
-        /* TEXT */
-
-        .name{
-            font-size:38px;
-            font-weight:700;
-            text-align:center;
-            margin-top:24px;
-        }
-
-        .role{
-            text-align:center;
-            margin-top:12px;
-            color:#d6d3d1;
-            line-height:1.8;
-            font-size:14px;
-        }
-
-        /* CONTACT */
-
-        .contact-info{
-            margin-top:35px;
-        }
-
-        .contact-item{
-            display:flex;
-            align-items:center;
-            gap:14px;
-            margin-bottom:20px;
-            color:#f1f5f9;
-            font-size:15px;
-        }
-
-        .contact-item i{
-            color:#d4af37;
-            font-size:18px;
-            text-shadow:0 0 15px rgba(212,175,55,0.7);
-        }
-
-        /* SOCIAL ICONS */
-
-        .social-icons{
-            display:flex;
-            justify-content:center;
-            gap:14px;
-            margin-top:32px;
-        }
-
-        .social-icons a{
-
-            width:52px;
-            height:52px;
-
-            border-radius:50%;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            text-decoration:none;
-
-            color:#fff;
-
-            background:
-            linear-gradient(
-                145deg,
-                rgba(212,175,55,0.12),
-                rgba(255,255,255,0.04)
-            );
-
-            border:1px solid rgba(212,175,55,0.25);
-
-            transition:0.4s;
-        }
-
-        .social-icons a:hover{
-
-            transform:
-                translateY(-5px)
-                scale(1.08);
-
-            background:#d4af37;
-            color:black;
-
-            box-shadow:
-                0 0 25px rgba(212,175,55,0.45);
-        }
-
-        /* MAIN CONTENT */
-
-        .main-content{
-            display:flex;
-            flex-direction:column;
-            gap:30px;
-        }
-
-        /* HERO SECTION */
-
-        .hero{
-
-            position:relative;
-            overflow:hidden;
-
-            background:
-            linear-gradient(
-            145deg,
-            rgba(255,255,255,0.08),
-            rgba(255,255,255,0.03)
-            );
-
-            backdrop-filter:blur(25px);
-
-            border-radius:36px;
-
-            padding:65px;
-
-            border:1px solid rgba(212,175,55,0.18);
-
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.55);
-
-            transition:0.5s;
-
-            animation:fadeUp 1s ease;
-        }
-
-        .hero:hover{
-
-            box-shadow:
-                0 25px 80px rgba(212,175,55,0.12);
-        }
-
-        .hero::before{
-
-            content:'';
-            position:absolute;
-            inset:0;
-
-            border-radius:36px;
-            padding:1px;
-
-            background:
-            linear-gradient(
-                135deg,
-                rgba(212,175,55,0.9),
-                rgba(245,215,110,0.3),
-                rgba(184,134,11,0.9)
-            );
-
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-
-            -webkit-mask-composite:xor;
-
-            opacity:0.5;
-        }
-
-        .hero-badge{
-
-            display:inline-block;
-
-            padding:10px 20px;
-
-            border-radius:50px;
-
-            background:rgba(212,175,55,0.12);
-
-            border:1px solid rgba(212,175,55,0.25);
-
-            margin-bottom:28px;
-
-            font-size:14px;
-        }
-
-        .hero h1{
-
-            font-size:72px;
-            font-weight:800;
-
-            line-height:1;
-
-            letter-spacing:-3px;
-
-            margin-bottom:25px;
-
-            background:
-            linear-gradient(
-                135deg,
-                #ffffff,
-                #d4af37
-            );
-
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-        }
-
-        .hero p{
-
-            max-width:720px;
-
-            color:#d6d3d1;
-
-            line-height:1.9;
-
-            font-size:17px;
-
-            font-weight:300;
-        }
-
-        /* BUTTONS */
-
-        .hero-buttons{
-            margin-top:38px;
-            display:flex;
-            gap:18px;
-            flex-wrap:wrap;
-        }
-
-        .download-btn,
-        .secondary-btn{
-
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-
-            padding:16px 30px;
-
-            border-radius:50px;
-
-            text-decoration:none;
-
-            transition:0.4s;
-
-            font-weight:600;
-        }
-
-        .download-btn{
-
-            background:
-            linear-gradient(
-                135deg,
-                #d4af37,
-                #f5d76e
-            );
-
-            color:black;
-        }
-
-        .download-btn:hover{
-
-            transform:
-                translateY(-5px)
-                scale(1.04);
-
-            box-shadow:
-                0 0 35px rgba(212,175,55,0.45);
-        }
-
-        .secondary-btn{
-            border:1px solid rgba(212,175,55,0.25);
-            color:#fff;
-        }
-
-        .secondary-btn:hover{
-            background:rgba(212,175,55,0.12);
-            transform:translateY(-4px);
-        }
-
-        /* CARDS */
-
-        .card{
-
-            position:relative;
-
-            overflow:hidden;
-
-            background:
-            linear-gradient(
-                145deg,
-                rgba(255,255,255,0.08),
-                rgba(255,255,255,0.03)
-            );
-
-            backdrop-filter:blur(25px);
-
-            border-radius:32px;
-
-            padding:36px;
-
-            border:1px solid rgba(212,175,55,0.15);
-
-            transition:0.5s;
-
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.5);
-
-            animation:fadeUp 1s ease;
-        }
-
-        .card::before{
-
-            content:'';
-
-            position:absolute;
-
-            inset:0;
-
-            border-radius:32px;
-
-            padding:1px;
-
-            background:
-            linear-gradient(
-                135deg,
-                rgba(212,175,55,0.9),
-                rgba(245,215,110,0.3),
-                rgba(184,134,11,0.9)
-            );
-
-            -webkit-mask:
-                linear-gradient(#fff 0 0) content-box,
-                linear-gradient(#fff 0 0);
-
-            -webkit-mask-composite:xor;
-
-            opacity:0.35;
-
-            transition:0.5s;
-        }
-
-        .card:hover::before{
-            opacity:1;
-        }
-
-        .card::after{
-
-            content:'';
-
-            position:absolute;
-
-            top:0;
-            left:-120%;
-
-            width:50%;
-            height:100%;
-
-            background:
-            linear-gradient(
-                90deg,
-                transparent,
-                rgba(212,175,55,0.12),
-                transparent
-            );
-
-            transition:1.2s;
-        }
-
-        .card:hover::after{
-            left:130%;
-        }
-
-        .card:hover{
-
-            transform:
-                translateY(-10px)
-                scale(1.02);
-
-            border:1px solid rgba(212,175,55,0.7);
-
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.6),
-                0 0 40px rgba(212,175,55,0.35);
-
-            animation:bounce 0.5s ease;
-        }
-
-        /* BOUNCE EFFECT */
-
-        @keyframes bounce{
-
-            0%{
-                transform:translateY(0);
-            }
-
-            50%{
-                transform:translateY(-12px);
-            }
-
-            100%{
-                transform:translateY(-8px);
-            }
-        }
-
-        /* TITLES */
-
-        .card h2{
-
-            font-size:30px;
-
-            margin-bottom:30px;
-
-            display:flex;
-            align-items:center;
-            gap:14px;
-        }
-
-        .card h2 i{
-
-            color:#d4af37;
-
-            text-shadow:
-            0 0 15px rgba(212,175,55,0.7);
-        }
-
-        /* DETAILS GRID */
-
-        .details-grid{
-
-            display:grid;
-
-            grid-template-columns:
-            repeat(auto-fit,minmax(220px,1fr));
-
-            gap:18px;
-        }
-
-        .detail-box{
-
-            background:rgba(255,255,255,0.04);
-
-            border:1px solid rgba(212,175,55,0.15);
-
-            padding:24px;
-
-            border-radius:24px;
-
-            transition:0.4s;
-        }
-
-        .detail-box:hover{
-
-            transform:translateY(-5px);
-
-            border:1px solid rgba(212,175,55,0.5);
-        }
-
-        .detail-box span{
-            color:#cbd5e1;
-            font-size:13px;
-        }
-
-        .detail-box h4{
-            margin-top:12px;
-            font-size:18px;
-            font-weight:600;
-        }
-
-        /* SKILLS */
-
-        .skills-wrapper{
-            display:flex;
-            flex-wrap:wrap;
-            gap:14px;
-        }
-
-        .skill-pill{
-
-            padding:14px 24px;
-
-            border-radius:40px;
-
-            background:
-            linear-gradient(
-                145deg,
-                rgba(212,175,55,0.12),
-                rgba(255,255,255,0.04)
-            );
-
-            border:1px solid rgba(212,175,55,0.25);
-
-            transition:0.4s;
-
-            font-weight:500;
-        }
-
-        .skill-pill:hover{
-
-            transform:
-                translateY(-5px)
-                scale(1.05);
-
-            box-shadow:
-                0 0 25px rgba(212,175,55,0.35);
-
-            border:1px solid rgba(212,175,55,0.6);
-        }
-
-        /* PROJECTS */
-
-        .project-box{
-
-            background:rgba(255,255,255,0.04);
-
-            border:1px solid rgba(212,175,55,0.15);
-
-            padding:28px;
-
-            border-radius:26px;
-
-            transition:0.5s;
-
-            margin-bottom:22px;
-        }
-
-        .project-box:hover{
-
-            transform:
-                translateY(-8px)
-                scale(1.02);
-
-            border:1px solid rgba(212,175,55,0.6);
-
-            box-shadow:
-                0 0 35px rgba(212,175,55,0.18);
-        }
-
-        .project-box h3{
-            font-size:24px;
-            margin-bottom:12px;
-        }
-
-        .project-box p{
-            color:#d6d3d1;
-            line-height:1.9;
-        }
-
-        /* LIST */
-
-        .modern-list{
-            display:flex;
-            flex-wrap:wrap;
-            gap:14px;
-        }
-
-        .modern-list div{
-
-            padding:14px 20px;
-
-            background:rgba(255,255,255,0.05);
-
-            border-radius:18px;
-
-            border:1px solid rgba(212,175,55,0.15);
-
-            transition:0.4s;
-        }
-
-        .modern-list div:hover{
-
-            transform:
-                translateY(-5px)
-                scale(1.04);
-
-            border:1px solid rgba(212,175,55,0.5);
-
-            box-shadow:
-                0 0 25px rgba(212,175,55,0.18);
-        }
-
-        /* FOOTER */
-
-        footer{
-            text-align:center;
-            padding:20px;
-            color:#cbd5e1;
-            font-size:14px;
-        }
-
-        /* ANIMATION */
-
-        @keyframes fadeUp{
-
-            from{
-                opacity:0;
-                transform:translateY(30px);
-            }
-
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width:1000px){
-
-            .container{
-                grid-template-columns:1fr;
-            }
-
-            .sidebar{
-                position:relative;
-                top:0;
-            }
-
-            .hero{
-                padding:40px;
-            }
-
-            .hero h1{
-                font-size:50px;
-            }
-
-            body{
-                padding:20px;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaanathi S | Premium Resume Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+:root{
+--gold:#d4af37;
+--gold-light:#f5d76e;
+--bg:#050505;
+--card:rgba(255,255,255,0.06);
+--border:rgba(212,175,55,0.18);
+--text:#f8fafc;
+--muted:#d6d3d1;
+}
+
+body{
+background:
+radial-gradient(circle at top left,#3b2f0b 0%,transparent 25%),
+radial-gradient(circle at bottom right,#2a1f05 0%,transparent 25%),
+#050505;
+color:var(--text);
+min-height:100vh;
+overflow-x:hidden;
+padding:30px;
+position:relative;
+}
+
+/* CUSTOM CURSOR */
+
+.cursor{
+width:20px;
+height:20px;
+border-radius:50%;
+position:fixed;
+background:var(--gold);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99999;
+box-shadow:
+0 0 20px var(--gold),
+0 0 40px var(--gold);
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:#050505;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999999;
+}
+
+.loader-logo{
+font-size:80px;
+font-weight:800;
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:pulse 2s infinite;
+}
+
+.loader-text{
+margin-top:20px;
+letter-spacing:5px;
+color:#d6d3d1;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:1200px;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:20px;
+z-index:1000;
+box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.navbar ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+font-size:15px;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+.navbar a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:var(--gold);
+transition:0.3s;
+}
+
+.navbar a:hover::after{
+width:100%;
+}
+
+.navbar a:hover{
+color:var(--gold);
+}
+
+/* BLURS */
+
+.blur{
+position:fixed;
+border-radius:50%;
+filter:blur(140px);
+opacity:0.35;
+z-index:-1;
+}
+
+.blur1{
+width:320px;
+height:320px;
+background:#d4af37;
+top:-120px;
+left:-80px;
+}
+
+.blur2{
+width:420px;
+height:420px;
+background:#b8860b;
+bottom:-120px;
+right:-100px;
+}
+
+.blur3{
+width:250px;
+height:250px;
+background:#f5d76e;
+top:40%;
+left:50%;
+}
+
+.container{
+max-width:1400px;
+margin:110px auto 0;
+display:grid;
+grid-template-columns:340px 1fr;
+gap:40px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:sticky;
+top:120px;
+height:fit-content;
+background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
+backdrop-filter:blur(25px);
+border:1px solid var(--border);
+border-radius:34px;
+padding:40px 28px;
+box-shadow:0 15px 50px rgba(0,0,0,0.45);
+overflow:hidden;
+}
+
+.sidebar::before,
+.card::before,
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+padding:1px;
+border-radius:inherit;
+background:linear-gradient(135deg,rgba(212,175,55,0.9),rgba(245,215,110,0.2),rgba(184,134,11,0.8));
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+-webkit-mask-composite:xor;
+opacity:0.4;
+pointer-events:none;
+}
+
+.profile-pic{
+width:190px;
+height:190px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:auto;
+border:5px solid rgba(212,175,55,0.35);
+box-shadow:
+0 0 40px rgba(212,175,55,0.25),
+0 0 80px rgba(212,175,55,0.1);
+transition:0.5s;
+}
+
+.profile-pic:hover{
+transform:scale(1.05);
+}
+
+.name{
+font-size:36px;
+font-weight:700;
+text-align:center;
+margin-top:24px;
+}
+
+.role{
+text-align:center;
+margin-top:12px;
+color:var(--muted);
+line-height:1.8;
+font-size:14px;
+}
+
+.contact-info{
+margin-top:35px;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:20px;
+font-size:15px;
+}
+
+.contact-item i{
+color:var(--gold);
+font-size:18px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+}
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:30px;
+}
+
+.social-icons a{
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:#fff;
+background:rgba(255,255,255,0.05);
+border:1px solid var(--border);
+transition:0.4s;
+}
+
+.social-icons a:hover{
+transform:translateY(-5px);
+background:var(--gold);
+color:black;
+box-shadow:0 0 30px rgba(212,175,55,0.35);
+}
+
+/* MAIN */
+
+.main-content{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.hero,
+.card{
+position:relative;
+overflow:hidden;
+background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
+backdrop-filter:blur(25px);
+border-radius:36px;
+padding:55px;
+border:1px solid var(--border);
+box-shadow:0 15px 50px rgba(0,0,0,0.45);
+}
+
+.hero h1{
+font-size:72px;
+font-weight:800;
+line-height:1;
+letter-spacing:-4px;
+margin-bottom:25px;
+background:linear-gradient(135deg,#ffffff,var(--gold));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-badge{
+display:inline-block;
+padding:10px 20px;
+border-radius:50px;
+background:rgba(212,175,55,0.12);
+border:1px solid rgba(212,175,55,0.25);
+margin-bottom:28px;
+font-size:14px;
+}
+
+.hero p{
+max-width:720px;
+color:var(--muted);
+line-height:1.9;
+font-size:17px;
+font-weight:300;
+}
+
+.hero-buttons{
+margin-top:38px;
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.download-btn,
+.secondary-btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:16px 30px;
+border-radius:50px;
+text-decoration:none;
+transition:0.4s;
+font-weight:600;
+}
+
+.download-btn{
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+color:black;
+}
+
+.download-btn:hover,
+.secondary-btn:hover{
+transform:translateY(-5px);
+}
+
+.secondary-btn{
+border:1px solid rgba(212,175,55,0.25);
+color:white;
+}
+
+.card h2{
+font-size:30px;
+margin-bottom:30px;
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.card h2 i{
+color:var(--gold);
+}
+
+.details-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.detail-box,
+.project-box,
+.timeline-item{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(212,175,55,0.15);
+padding:24px;
+border-radius:24px;
+transition:0.4s;
+}
+
+.detail-box:hover,
+.project-box:hover,
+.timeline-item:hover{
+transform:translateY(-6px);
+border:1px solid rgba(212,175,55,0.5);
+}
+
+.detail-box span{
+color:#cbd5e1;
+font-size:13px;
+}
+
+.detail-box h4{
+margin-top:12px;
+font-size:18px;
+}
+
+.skills-wrapper,
+.modern-list{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+.skill-pill,
+.modern-list div{
+padding:14px 24px;
+border-radius:40px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(212,175,55,0.25);
+transition:0.4s;
+}
+
+.skill-pill:hover,
+.modern-list div:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(212,175,55,0.2);
+}
+
+.skill-bar{
+margin-bottom:24px;
+}
+
+.skill-bar span{
+display:block;
+margin-bottom:10px;
+font-weight:500;
+}
+
+.progress{
+height:10px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+border-radius:20px;
+}
+
+.html{width:95%;}
+.css{width:90%;}
+.js{width:70%;}
+.canva{width:95%;}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:22px;
+}
+
+.project-image{
+width:100%;
+height:200px;
+overflow:hidden;
+border-radius:18px;
+margin-bottom:20px;
+}
+
+.project-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.project-box:hover img{
+transform:scale(1.08);
+}
+
+.project-box h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+.project-box p{
+color:var(--muted);
+line-height:1.9;
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.timeline-item h3{
+margin-bottom:10px;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:18px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(212,175,55,0.15);
+border-radius:18px;
+color:white;
+outline:none;
+}
+
+.contact-form textarea{
+min-height:150px;
+resize:none;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#cbd5e1;
+font-size:14px;
+}
+
+@media(max-width:1000px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+position:relative;
+top:0;
+}
+
+.hero,
+.card{
+padding:35px;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.navbar ul{
+display:none;
+}
+
+body{
+padding:15px;
+}
+
+.cursor{
+display:none;
+}
+
+}
+
+</style>
 </head>
-
 <body>
 
-    <!-- GOLD BLURS -->
+<div id="loader">
+<h1 class="loader-logo">VS</h1>
+<p class="loader-text">PREMIUM RESUME PORTFOLIO</p>
+</div>
 
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
-    <div class="blur blur3"></div>
+<div class="cursor"></div>
 
-    <div class="container">
+<nav class="navbar">
+<div class="logo">VS</div>
 
-        <!-- SIDEBAR -->
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-        <div class="sidebar">
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+<div class="blur blur3"></div>
 
-            <img src="ChatAM.png" alt="Profile" class="profile-pic">
+<div class="container">
 
-            <div class="name">Vaanathi S</div>
+<div class="sidebar" data-aos="fade-right">
 
-            <div class="role">
-                Luxury UI Enthusiast • Digital Creator<br>
-                Peepal Prodigy School • Coimbatore
-            </div>
+<img src="ChatAM.png" alt="Profile" class="profile-pic">
 
-            <div class="contact-info">
+<div class="name">Vaanathi S</div>
 
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <span>vaanathis4@gmail.com</span>
-                </div>
+<div class="role">
+Creative Student • Frontend Designer • Public Speaker
+</div>
 
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>1234567890</span>
-                </div>
+<div class="contact-info">
 
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-crosshairs"></i>
-                    <span>Coimbatore, Tamil Nadu</span>
-                </div>
+<div class="contact-item">
+<i class="fa-solid fa-envelope"></i>
+<a href="mailto:vaanathis4@gmail.com">vaanathis4@gmail.com</a>
+</div>
 
-                <div class="contact-item">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>10th Grade Student</span>
-                </div>
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<a href="tel:1234567890">1234567890</a>
+</div>
 
-            </div>
+<div class="contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<span>Coimbatore, Tamil Nadu</span>
+</div>
 
-            <div class="social-icons">
-                <a href="https://github.com/dashboard"><i class="fab fa-github"></i></a>
-            </div>
+<div class="contact-item">
+<i class="fa-solid fa-school"></i>
+<span>Peepal Prodigy School</span>
+</div>
 
-        </div>
+</div>
 
-        <!-- MAIN CONTENT -->
+<div class="social-icons">
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
 
-        <div class="main-content">
+</div>
 
-            <!-- HERO -->
+<div class="main-content">
 
-            <div class="hero">
+<div class="hero" id="about" data-aos="fade-up">
 
-                <div class="hero-badge">
-                    ✨ Creative Student • Public Speaker • Designer
-                </div>
+<div class="hero-badge">
+✨ Creative Student • UI Enthusiast • Digital Creator
+</div>
 
-                <h1>
-                    Building Luxury
-                    Digital Experiences
-                </h1>
+<h1>
+Creative Student & Frontend Designer
+</h1>
 
-                <p>
-                    Passionate about premium web design, modern interfaces,
-                    elegant digital experiences, creativity, and futuristic UI concepts.
-                    Focused on building visually engaging and interactive projects.
-                </p>
+<p>
+Passionate about premium web design, frontend development, digital creativity, and elegant user experiences. I enjoy building visually engaging websites, interactive projects, and modern interfaces while continuously learning new creative technologies.
+</p>
 
-                <div class="hero-buttons">
+<div class="hero-buttons">
+<a href="resume.pdf" download class="download-btn">
+<i class="fa-solid fa-download"></i>
+Download Resume
+</a>
 
-                    
+<a href="#projects" class="secondary-btn">
+<i class="fa-solid fa-rocket"></i>
+View Projects
+</a>
+</div>
 
-                    
+</div>
 
-                </div>
+<div class="card" data-aos="fade-up">
 
-            </div>
+<h2>
+<i class="fa-solid fa-user"></i>
+About Me
+</h2>
+
+<p style="line-height:2;color:#d6d3d1;">
+I am a creative and ambitious student passionate about frontend development, luxury UI design, public speaking, and digital creativity. I enjoy creating modern websites and visually attractive digital experiences while continuously improving my technical and creative skills.
+</p>
+
+</div>
+
+<div class="card" data-aos="fade-up">
+
+<h2>
+<i class="fa-solid fa-id-card"></i>
+Personal Details
+</h2>
+
+<div class="details-grid">
+
+<div class="detail-box">
+<span>Name</span>
+<h4>Vaanathi S</h4>
+</div>
+
+<div class="detail-box">
+<span>Education</span>
+<h4>10th Grade Student</h4>
+</div>
+
+<div class="detail-box">
+<span>Location</span>
+<h4>Coimbatore</h4>
+</div>
 
-            <!-- PERSONAL DETAILS -->
+<div class="detail-box">
+<span>Interest</span>
+<h4>Luxury UI Design</h4>
+</div>
+
+<div class="detail-box">
+<span>Hobbies</span>
+<h4>Dancing & Reading</h4>
+</div>
 
-            <div class="card">
+<div class="detail-box">
+<span>Goal</span>
+<h4>Frontend Developer</h4>
+</div>
 
-                <h2>
-                    <i class="fa-solid fa-id-card"></i>
-                    Personal Details
-                </h2>
+</div>
 
-                <div class="details-grid">
+</div>
 
-                    <div class="detail-box">
-                        <span>Name</span>
-                        <h4>Vaanathi S</h4>
-                    </div>
+<div class="card" id="skills" data-aos="fade-up">
 
-                    <div class="detail-box">
-                        <span>Email</span>
-                        <h4>vaanathis4@gmail.com</h4>
-                    </div>
+<h2>
+<i class="fa-solid fa-code"></i>
+Skills
+</h2>
 
-                    <div class="detail-box">
-                        <span>Location</span>
-                        <h4>Coimbatore</h4>
-                    </div>
+<div class="skills-wrapper">
+<div class="skill-pill">Communication</div>
+<div class="skill-pill">Leadership</div>
+<div class="skill-pill">Public Speaking</div>
+<div class="skill-pill">Creativity</div>
+<div class="skill-pill">HTML</div>
+<div class="skill-pill">CSS</div>
+<div class="skill-pill">Canva</div>
+<div class="skill-pill">Presentation Design</div>
+</div>
 
-                    <div class="detail-box">
-                        <span>Qualification</span>
-                        <h4>10th Grade</h4>
-                    </div>
+<br><br>
 
-                    <div class="detail-box">
-                        <span>Hobbies</span>
-                        <h4>Dancing & Reading</h4>
-                    </div>
+<div class="skill-bar">
+<span>HTML</span>
+<div class="progress"><div class="progress-fill html"></div></div>
+</div>
 
-                    <div class="detail-box">
-                        <span>Interest</span>
-                        <h4>Luxury UI Design</h4>
-                    </div>
+<div class="skill-bar">
+<span>CSS</span>
+<div class="progress"><div class="progress-fill css"></div></div>
+</div>
 
-                </div>
+<div class="skill-bar">
+<span>JavaScript</span>
+<div class="progress"><div class="progress-fill js"></div></div>
+</div>
 
-            </div>
+<div class="skill-bar">
+<span>Canva Design</span>
+<div class="progress"><div class="progress-fill canva"></div></div>
+</div>
 
-            <!-- SKILLS -->
+</div>
 
-            <div class="card">
+<div class="card" data-aos="fade-up">
 
-                <h2>
-                    <i class="fa-solid fa-code"></i>
-                    Skills
-                </h2>
+<h2>
+<i class="fa-solid fa-graduation-cap"></i>
+Education & Learning
+</h2>
 
-                <div class="skills-wrapper">
+<div class="modern-list">
+<div>Peepal Prodigy School</div>
+<div>Frontend Development</div>
+<div>UI/UX Design</div>
+<div>Adobe Premiere Pro</div>
+<div>Animation Design</div>
+<div>Presentation Design</div>
+</div>
 
-                    <div class="skill-pill">Communication</div>
+</div>
 
-                    <div class="skill-pill">Leadership</div>
+<div class="card" id="projects" data-aos="fade-up">
 
-                    <div class="skill-pill">Public Speaking</div>
+<h2>
+<i class="fa-solid fa-rocket"></i>
+Featured Projects
+</h2>
 
-                    <div class="skill-pill">Creativity</div>
+<div class="project-grid">
 
-                    <div class="skill-pill">HTML</div>
+<div class="project-box">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-                    <div class="skill-pill">CSS</div>
+<h3>Creative Resume Website</h3>
 
-                    <div class="skill-pill">Canva</div>
+<p>
+Designed and developed a responsive premium portfolio website using HTML and CSS with luxury UI effects and modern layouts.
+</p>
 
-                    <div class="skill-pill">Presentation Design</div>
+<br>
 
-                    <div class="skill-pill">Digital Creativity</div>
+<div class="modern-list">
+<div>HTML</div>
+<div>CSS</div>
+<div>UI Design</div>
+</div>
 
-                    <div class="skill-pill">Teamwork</div>
+</div>
 
-                </div>
+<div class="project-box">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-            </div>
+<h3>Presentation Design Projects</h3>
 
-            <!-- TECH STACK -->
+<p>
+Created visually engaging slides, posters, and educational presentation designs for school activities and events.
+</p>
 
-            <div class="card">
+<br>
 
-                <h2>
-                    <i class="fa-solid fa-layer-group"></i>
-                    Tech Stack
-                </h2>
+<div class="modern-list">
+<div>Canva</div>
+<div>Creativity</div>
+<div>Presentations</div>
+</div>
 
-                <div class="modern-list">
+</div>
 
-                    <div>HTML</div>
+</div>
 
-                    <div>CSS</div>
+</div>
 
-                    <div>JavaScript</div>
+<div class="card" data-aos="fade-up">
 
-                    <div>Canva</div>
+<h2>
+<i class="fa-solid fa-timeline"></i>
+My Journey
+</h2>
 
-                    <div>Google Docs</div>
+<div class="timeline">
 
-                    <div>PowerPoint</div>
+<div class="timeline-item">
+<h3>Started Learning Web Design</h3>
+<p>Explored HTML and CSS to create modern responsive websites.</p>
+</div>
 
-                </div>
+<div class="timeline-item">
+<h3>Built Premium Portfolio</h3>
+<p>Created a luxury-themed personal portfolio website with modern UI effects.</p>
+</div>
 
-            </div>
+<div class="timeline-item">
+<h3>Public Speaking Activities</h3>
+<p>Participated in school events and presentations to improve communication skills.</p>
+</div>
 
-            <!-- PROJECTS -->
+</div>
 
-            <div class="card" id="projects">
+</div>
 
-                <h2>
-                    <i class="fa-solid fa-rocket"></i>
-                    Projects
-                </h2>
+<div class="card" data-aos="fade-up">
 
-                <div class="project-box">
+<h2>
+<i class="fa-solid fa-star"></i>
+Areas of Interest
+</h2>
 
-                    <h3>Creative Resume Website</h3>
+<div class="modern-list">
+<div>Frontend Development</div>
+<div>Modern Web Design</div>
+<div>Luxury UI Design</div>
+<div>Animation Design</div>
+<div>Creative Presentations</div>
+<div>Digital Branding</div>
+</div>
 
-                    <p>
-                        Designed and developed a premium responsive portfolio website
-                        using HTML and CSS with modern luxury UI effects.
-                    </p>
+</div>
 
-                </div>
+<div class="card" id="contact" data-aos="fade-up">
 
-                <div class="project-box">
+<h2>
+<i class="fa-solid fa-paper-plane"></i>
+Contact Me
+</h2>
 
-                    <h3>Presentation Design Projects</h3>
+<form class="contact-form">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button class="download-btn" type="submit">
+<i class="fa-solid fa-paper-plane"></i>
+Send Message
+</button>
+</form>
 
-                    <p>
-                        Created visually engaging slides, posters, and educational
-                        presentation designs for school events and activities.
-                    </p>
+</div>
 
-                </div>
+<footer>
+✨ Open to Creative Opportunities & Collaborations • © 2026 Vaanathi S
+</footer>
 
-                <div class="project-box">
+</div>
 
-                    <h3>Public Speaking Activities</h3>
+</div>
 
-                    <p>
-                        Participated in speech competitions and cultural programs
-                        to improve confidence, communication, and stage presence.
-                    </p>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-                </div>
+<script>
 
-            </div>
+window.addEventListener('load',()=>{
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+},1800);
+});
 
-            <!-- CURRENTLY LEARNING -->
+AOS.init({
+duration:1000,
+once:true
+});
 
-            <div class="card">
+const cursor=document.querySelector('.cursor');
 
-                <h2>
-                    <i class="fa-solid fa-book-open"></i>
-                    Currently Working
-                </h2>
+document.addEventListener('mousemove',(e)=>{
+if(cursor){
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+}
+});
 
-                <div class="modern-list">
-
-                    <div>JavaScript</div>
-
-                    <div>UI/UX Design</div>
-
-                    <div>Animation Design</div>
-
-                    <div>Modern Web Design</div>
-
-                    <div>Frontend Development</div>
-
-                </div>
-
-            </div>
-
-            <!-- Deals In -->
-
-            <div class="card">
-
-                <h2>
-                    <i class="fa-solid fa-star"></i>
-                    Deals In
-                </h2>
-
-                <div class="modern-list">
-
-                    <div>Web Design</div>
-
-                    <div>Advanced Frontend Development</div>
-
-                    <div>Build Creative Digital Products</div>
-
-                    <div>Create Premium UI Designs</div>
-
-                </div>
-
-            </div>
-
-            <!-- ACHIEVEMENTS -->
-
-            <div class="card">
-
-                <h2>
-                    <i class="fa-solid fa-trophy"></i>
-                    Accomplishments
-                </h2>
-
-                <div class="modern-list">
-
-                    <div>Public Speaking Events</div>
-
-                    <div>Cultural Activities</div>
-
-                    <div>Creative Digital Designs</div>
-
-                    <div>Personal Portfolio Website</div>
-
-                </div>
-
-            </div>
-
-            <!-- FOOTER -->
-
-            <footer>
-
-                © 2026 Vaanathi S • Crafted with Creativity & Passion ✨
-
-            </footer>
-
-        </div>
-
-    </div>
+</script>
 
 </body>
-
 </html>
+
