@@ -1,16 +1,19 @@
-
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaanathi S | Premium Resume Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Vaanathi S | Luxury Resume Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<link rel="stylesheet"
+href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
 <style>
 
@@ -27,40 +30,73 @@ scroll-behavior:smooth;
 
 :root{
 --gold:#d4af37;
---gold-light:#f5d76e;
+--gold-light:#f8e18b;
+--gold-dark:#9b7b16;
 --bg:#050505;
 --card:rgba(255,255,255,0.06);
 --border:rgba(212,175,55,0.18);
 --text:#f8fafc;
---muted:#d6d3d1;
+--muted:#cbd5e1;
 }
 
 body{
 background:
-radial-gradient(circle at top left,#3b2f0b 0%,transparent 25%),
-radial-gradient(circle at bottom right,#2a1f05 0%,transparent 25%),
-#050505;
+radial-gradient(circle at top left,rgba(212,175,55,0.15),transparent 20%),
+radial-gradient(circle at bottom right,rgba(212,175,55,0.12),transparent 25%),
+linear-gradient(145deg,#030303,#090909,#050505);
 color:var(--text);
 min-height:100vh;
 overflow-x:hidden;
 padding:30px;
 position:relative;
+cursor:none; /* HIDE NORMAL CURSOR */
 }
 
-/* CUSTOM CURSOR */
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(var(--gold),var(--gold-light));
+border-radius:20px;
+}
+
+/* PREMIUM CURSOR */
 
 .cursor{
-width:20px;
-height:20px;
+width:18px;
+height:18px;
 border-radius:50%;
 position:fixed;
-background:var(--gold);
-pointer-events:none;
+top:0;
+left:0;
 transform:translate(-50%,-50%);
-z-index:99999;
+pointer-events:none;
+z-index:999999;
+background:radial-gradient(circle,var(--gold-light),var(--gold));
 box-shadow:
-0 0 20px var(--gold),
-0 0 40px var(--gold);
+0 0 12px var(--gold),
+0 0 25px rgba(212,175,55,0.8),
+0 0 45px rgba(212,175,55,0.5);
+mix-blend-mode:screen;
+transition:
+transform 0.08s linear,
+width 0.2s ease,
+height 0.2s ease,
+background 0.3s ease;
+}
+
+.cursor-grow{
+width:34px;
+height:34px;
+background:rgba(212,175,55,0.25);
+backdrop-filter:blur(2px);
 }
 
 /* LOADER */
@@ -73,22 +109,24 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-z-index:999999;
+z-index:9999999;
 }
 
 .loader-logo{
-font-size:80px;
+font-size:90px;
 font-weight:800;
 background:linear-gradient(135deg,var(--gold),var(--gold-light));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 animation:pulse 2s infinite;
+letter-spacing:4px;
 }
 
 .loader-text{
 margin-top:20px;
-letter-spacing:5px;
-color:#d6d3d1;
+letter-spacing:6px;
+font-size:14px;
+color:#ddd;
 }
 
 @keyframes pulse{
@@ -104,31 +142,34 @@ position:fixed;
 top:20px;
 left:50%;
 transform:translateX(-50%);
-width:90%;
-max-width:1200px;
-padding:18px 30px;
+width:92%;
+max-width:1250px;
+padding:18px 35px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(20px);
-border:1px solid var(--border);
-border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
 z-index:1000;
-box-shadow:0 10px 40px rgba(0,0,0,0.35);
+box-shadow:
+0 10px 40px rgba(0,0,0,0.45),
+0 0 25px rgba(212,175,55,0.08);
 }
 
 .logo{
-font-size:28px;
+font-size:32px;
 font-weight:800;
-background:linear-gradient(135deg,var(--gold),var(--gold-light));
+background:linear-gradient(135deg,var(--gold-light),var(--gold));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+letter-spacing:2px;
 }
 
 .navbar ul{
 display:flex;
-gap:28px;
+gap:35px;
 list-style:none;
 }
 
@@ -138,18 +179,19 @@ color:white;
 font-size:15px;
 font-weight:500;
 position:relative;
-transition:0.3s;
+transition:0.4s;
 }
 
 .navbar a::after{
 content:'';
 position:absolute;
 left:0;
-bottom:-5px;
+bottom:-6px;
 width:0%;
 height:2px;
-background:var(--gold);
-transition:0.3s;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+transition:0.4s;
+border-radius:10px;
 }
 
 .navbar a:hover::after{
@@ -157,46 +199,48 @@ width:100%;
 }
 
 .navbar a:hover{
-color:var(--gold);
+color:var(--gold-light);
 }
 
-/* BLURS */
+/* BACKGROUND BLURS */
 
 .blur{
 position:fixed;
 border-radius:50%;
-filter:blur(140px);
-opacity:0.35;
+filter:blur(120px);
+opacity:0.28;
 z-index:-1;
 }
 
 .blur1{
-width:320px;
-height:320px;
+width:300px;
+height:300px;
 background:#d4af37;
-top:-120px;
+top:-100px;
 left:-80px;
 }
 
 .blur2{
-width:420px;
-height:420px;
-background:#b8860b;
-bottom:-120px;
-right:-100px;
+width:350px;
+height:350px;
+background:#a17805;
+bottom:-100px;
+right:-90px;
 }
 
 .blur3{
 width:250px;
 height:250px;
-background:#f5d76e;
+background:#f8e18b;
 top:40%;
-left:50%;
+left:45%;
 }
 
+/* LAYOUT */
+
 .container{
-max-width:1400px;
-margin:110px auto 0;
+max-width:1450px;
+margin:120px auto 0;
 display:grid;
 grid-template-columns:340px 1fr;
 gap:40px;
@@ -208,12 +252,16 @@ gap:40px;
 position:sticky;
 top:120px;
 height:fit-content;
-background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
-backdrop-filter:blur(25px);
-border:1px solid var(--border);
+padding:42px 30px;
 border-radius:34px;
-padding:40px 28px;
-box-shadow:0 15px 50px rgba(0,0,0,0.45);
+background:linear-gradient(145deg,
+rgba(255,255,255,0.07),
+rgba(255,255,255,0.03));
+backdrop-filter:blur(30px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 20px 50px rgba(0,0,0,0.45),
+0 0 30px rgba(212,175,55,0.08);
 overflow:hidden;
 }
 
@@ -225,10 +273,17 @@ position:absolute;
 inset:0;
 padding:1px;
 border-radius:inherit;
-background:linear-gradient(135deg,rgba(212,175,55,0.9),rgba(245,215,110,0.2),rgba(184,134,11,0.8));
+background:linear-gradient(
+135deg,
+rgba(212,175,55,0.9),
+rgba(255,255,255,0.05),
+rgba(212,175,55,0.5)
+);
+
 -webkit-mask:
 linear-gradient(#fff 0 0) content-box,
 linear-gradient(#fff 0 0);
+
 -webkit-mask-composite:xor;
 opacity:0.4;
 pointer-events:none;
@@ -237,14 +292,14 @@ pointer-events:none;
 .profile-pic{
 width:190px;
 height:190px;
-border-radius:50%;
 object-fit:cover;
+border-radius:50%;
 display:block;
 margin:auto;
-border:5px solid rgba(212,175,55,0.35);
+border:4px solid rgba(212,175,55,0.3);
 box-shadow:
-0 0 40px rgba(212,175,55,0.25),
-0 0 80px rgba(212,175,55,0.1);
+0 0 30px rgba(212,175,55,0.25),
+0 0 60px rgba(212,175,55,0.12);
 transition:0.5s;
 }
 
@@ -253,17 +308,17 @@ transform:scale(1.05);
 }
 
 .name{
-font-size:36px;
-font-weight:700;
 text-align:center;
+font-size:34px;
+font-weight:700;
 margin-top:24px;
 }
 
 .role{
 text-align:center;
 margin-top:12px;
-color:var(--muted);
 line-height:1.8;
+color:var(--muted);
 font-size:14px;
 }
 
@@ -274,7 +329,7 @@ margin-top:35px;
 .contact-item{
 display:flex;
 align-items:center;
-gap:14px;
+gap:15px;
 margin-bottom:20px;
 font-size:15px;
 }
@@ -282,39 +337,47 @@ font-size:15px;
 .contact-item i{
 color:var(--gold);
 font-size:18px;
+width:20px;
 }
 
 .contact-item a{
 color:white;
 text-decoration:none;
+transition:0.3s;
+}
+
+.contact-item a:hover{
+color:var(--gold-light);
 }
 
 .social-icons{
 display:flex;
 justify-content:center;
-gap:14px;
-margin-top:30px;
+gap:16px;
+margin-top:35px;
 }
 
 .social-icons a{
-width:52px;
-height:52px;
-border-radius:50%;
+width:54px;
+height:54px;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+border-radius:50%;
 text-decoration:none;
-color:#fff;
+font-size:18px;
+color:white;
 background:rgba(255,255,255,0.05);
-border:1px solid var(--border);
+border:1px solid rgba(212,175,55,0.15);
 transition:0.4s;
 }
 
 .social-icons a:hover{
-transform:translateY(-5px);
-background:var(--gold);
+transform:translateY(-6px) scale(1.08);
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
 color:black;
-box-shadow:0 0 30px rgba(212,175,55,0.35);
+box-shadow:
+0 0 25px rgba(212,175,55,0.45);
 }
 
 /* MAIN */
@@ -329,48 +392,54 @@ gap:30px;
 .card{
 position:relative;
 overflow:hidden;
-background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
-backdrop-filter:blur(25px);
-border-radius:36px;
 padding:55px;
-border:1px solid var(--border);
-box-shadow:0 15px 50px rgba(0,0,0,0.45);
+border-radius:36px;
+background:linear-gradient(145deg,
+rgba(255,255,255,0.08),
+rgba(255,255,255,0.03));
+backdrop-filter:blur(30px);
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 20px 50px rgba(0,0,0,0.45),
+0 0 30px rgba(212,175,55,0.05);
 }
 
 .hero h1{
-font-size:72px;
-font-weight:800;
+font-size:76px;
 line-height:1;
+font-weight:800;
 letter-spacing:-4px;
-margin-bottom:25px;
-background:linear-gradient(135deg,#ffffff,var(--gold));
+margin-bottom:28px;
+background:linear-gradient(135deg,#fff,var(--gold-light));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero-badge{
 display:inline-block;
-padding:10px 20px;
+padding:10px 22px;
 border-radius:50px;
-background:rgba(212,175,55,0.12);
+background:rgba(212,175,55,0.1);
 border:1px solid rgba(212,175,55,0.25);
 margin-bottom:28px;
 font-size:14px;
+color:#f1f5f9;
+backdrop-filter:blur(10px);
 }
 
 .hero p{
-max-width:720px;
-color:var(--muted);
+max-width:760px;
 line-height:1.9;
 font-size:17px;
 font-weight:300;
+color:var(--muted);
 }
 
 .hero-buttons{
-margin-top:38px;
 display:flex;
 gap:18px;
 flex-wrap:wrap;
+margin-top:38px;
 }
 
 .download-btn,
@@ -380,25 +449,32 @@ align-items:center;
 gap:10px;
 padding:16px 30px;
 border-radius:50px;
+font-weight:600;
 text-decoration:none;
 transition:0.4s;
-font-weight:600;
 }
 
 .download-btn{
 background:linear-gradient(135deg,var(--gold),var(--gold-light));
 color:black;
+box-shadow:
+0 10px 30px rgba(212,175,55,0.3);
+border:none;
+cursor:pointer;
+}
+
+.secondary-btn{
+color:white;
+border:1px solid rgba(212,175,55,0.2);
+background:rgba(255,255,255,0.03);
 }
 
 .download-btn:hover,
 .secondary-btn:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 }
 
-.secondary-btn{
-border:1px solid rgba(212,175,55,0.25);
-color:white;
-}
+/* HEADINGS */
 
 .card h2{
 font-size:30px;
@@ -412,6 +488,8 @@ gap:14px;
 color:var(--gold);
 }
 
+/* DETAILS */
+
 .details-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -422,28 +500,34 @@ gap:18px;
 .project-box,
 .timeline-item{
 background:rgba(255,255,255,0.04);
-border:1px solid rgba(212,175,55,0.15);
+border:1px solid rgba(212,175,55,0.12);
 padding:24px;
 border-radius:24px;
 transition:0.4s;
+backdrop-filter:blur(20px);
 }
 
 .detail-box:hover,
 .project-box:hover,
 .timeline-item:hover{
 transform:translateY(-6px);
-border:1px solid rgba(212,175,55,0.5);
+border:1px solid rgba(212,175,55,0.45);
+box-shadow:
+0 15px 35px rgba(0,0,0,0.25),
+0 0 20px rgba(212,175,55,0.08);
 }
 
 .detail-box span{
-color:#cbd5e1;
 font-size:13px;
+color:#cbd5e1;
 }
 
 .detail-box h4{
 margin-top:12px;
 font-size:18px;
 }
+
+/* SKILLS */
 
 .skills-wrapper,
 .modern-list{
@@ -456,15 +540,17 @@ gap:14px;
 .modern-list div{
 padding:14px 24px;
 border-radius:40px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.25);
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(212,175,55,0.18);
 transition:0.4s;
 }
 
 .skill-pill:hover,
 .modern-list div:hover{
 transform:translateY(-5px);
-box-shadow:0 0 25px rgba(212,175,55,0.2);
+box-shadow:
+0 0 20px rgba(212,175,55,0.18);
+background:rgba(212,175,55,0.08);
 }
 
 .skill-bar{
@@ -486,26 +572,30 @@ overflow:hidden;
 
 .progress-fill{
 height:100%;
-background:linear-gradient(90deg,var(--gold),var(--gold-light));
 border-radius:20px;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+box-shadow:
+0 0 15px rgba(212,175,55,0.4);
 }
 
 .html{width:95%;}
 .css{width:90%;}
-.js{width:70%;}
-.canva{width:95%;}
+.js{width:72%;}
+.canva{width:96%;}
+
+/* PROJECTS */
 
 .project-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:22px;
+gap:24px;
 }
 
 .project-image{
 width:100%;
-height:200px;
+height:210px;
 overflow:hidden;
-border-radius:18px;
+border-radius:20px;
 margin-bottom:20px;
 }
 
@@ -526,9 +616,11 @@ margin-bottom:12px;
 }
 
 .project-box p{
-color:var(--muted);
 line-height:1.9;
+color:var(--muted);
 }
+
+/* TIMELINE */
 
 .timeline{
 display:flex;
@@ -539,6 +631,8 @@ gap:20px;
 .timeline-item h3{
 margin-bottom:10px;
 }
+
+/* CONTACT */
 
 .contact-form{
 display:flex;
@@ -551,10 +645,18 @@ gap:18px;
 width:100%;
 padding:18px;
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(212,175,55,0.15);
+border:1px solid rgba(212,175,55,0.12);
 border-radius:18px;
 color:white;
 outline:none;
+transition:0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border:1px solid rgba(212,175,55,0.45);
+box-shadow:
+0 0 20px rgba(212,175,55,0.08);
 }
 
 .contact-form textarea{
@@ -562,14 +664,27 @@ min-height:150px;
 resize:none;
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:20px;
-color:#cbd5e1;
 font-size:14px;
+color:#cbd5e1;
 }
 
+/* MOBILE */
+
 @media(max-width:1000px){
+
+body{
+padding:15px;
+cursor:auto;
+}
+
+.cursor{
+display:none;
+}
 
 .container{
 grid-template-columns:1fr;
@@ -586,18 +701,10 @@ padding:35px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 }
 
 .navbar ul{
-display:none;
-}
-
-body{
-padding:15px;
-}
-
-.cursor{
 display:none;
 }
 
@@ -605,16 +712,24 @@ display:none;
 
 </style>
 </head>
+
 <body>
+
+<!-- LOADER -->
 
 <div id="loader">
 <h1 class="loader-logo">VS</h1>
 <p class="loader-text">PREMIUM RESUME PORTFOLIO</p>
 </div>
 
+<!-- CUSTOM CURSOR -->
+
 <div class="cursor"></div>
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
+
 <div class="logo">VS</div>
 
 <ul>
@@ -623,17 +738,24 @@ display:none;
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
+
+<!-- BLURS -->
 
 <div class="blur blur1"></div>
 <div class="blur blur2"></div>
 <div class="blur blur3"></div>
 
+<!-- MAIN CONTAINER -->
+
 <div class="container">
+
+<!-- SIDEBAR -->
 
 <div class="sidebar" data-aos="fade-right">
 
-<img src="ChatAM.png" alt="Profile" class="profile-pic">
+<img src="ChatAM.png" class="profile-pic" alt="Profile">
 
 <div class="name">Vaanathi S</div>
 
@@ -673,7 +795,11 @@ Creative Student • Frontend Designer • Public Speaker
 
 </div>
 
+<!-- MAIN -->
+
 <div class="main-content">
+
+<!-- HERO -->
 
 <div class="hero" id="about" data-aos="fade-up">
 
@@ -686,10 +812,11 @@ Creative Student & Frontend Designer
 </h1>
 
 <p>
-Passionate about premium web design, frontend development, digital creativity, and elegant user experiences. I enjoy building visually engaging websites, interactive projects, and modern interfaces while continuously learning new creative technologies.
+Passionate about premium web design, frontend development, digital creativity, and elegant user experiences. I enjoy building visually engaging websites, interactive projects, and modern interfaces while continuously learning creative technologies.
 </p>
 
 <div class="hero-buttons">
+
 <a href="resume.pdf" download class="download-btn">
 <i class="fa-solid fa-download"></i>
 Download Resume
@@ -699,9 +826,12 @@ Download Resume
 <i class="fa-solid fa-rocket"></i>
 View Projects
 </a>
+
 </div>
 
 </div>
+
+<!-- ABOUT -->
 
 <div class="card" data-aos="fade-up">
 
@@ -711,10 +841,12 @@ About Me
 </h2>
 
 <p style="line-height:2;color:#d6d3d1;">
-I am a creative and ambitious student passionate about frontend development, luxury UI design, public speaking, and digital creativity. I enjoy creating modern websites and visually attractive digital experiences while continuously improving my technical and creative skills.
+I am a creative and ambitious student passionate about frontend development, luxury UI design, public speaking, and digital creativity. I enjoy designing elegant websites and modern digital experiences while continuously improving my technical and creative skills.
 </p>
 
 </div>
+
+<!-- DETAILS -->
 
 <div class="card" data-aos="fade-up">
 
@@ -759,6 +891,8 @@ Personal Details
 
 </div>
 
+<!-- SKILLS -->
+
 <div class="card" id="skills" data-aos="fade-up">
 
 <h2>
@@ -767,6 +901,7 @@ Skills
 </h2>
 
 <div class="skills-wrapper">
+
 <div class="skill-pill">Communication</div>
 <div class="skill-pill">Leadership</div>
 <div class="skill-pill">Public Speaking</div>
@@ -775,49 +910,42 @@ Skills
 <div class="skill-pill">CSS</div>
 <div class="skill-pill">Canva</div>
 <div class="skill-pill">Presentation Design</div>
+
 </div>
 
 <br><br>
 
 <div class="skill-bar">
 <span>HTML</span>
-<div class="progress"><div class="progress-fill html"></div></div>
+<div class="progress">
+<div class="progress-fill html"></div>
+</div>
 </div>
 
 <div class="skill-bar">
 <span>CSS</span>
-<div class="progress"><div class="progress-fill css"></div></div>
+<div class="progress">
+<div class="progress-fill css"></div>
+</div>
 </div>
 
 <div class="skill-bar">
 <span>JavaScript</span>
-<div class="progress"><div class="progress-fill js"></div></div>
+<div class="progress">
+<div class="progress-fill js"></div>
+</div>
 </div>
 
 <div class="skill-bar">
 <span>Canva Design</span>
-<div class="progress"><div class="progress-fill canva"></div></div>
+<div class="progress">
+<div class="progress-fill canva"></div>
+</div>
 </div>
 
 </div>
 
-<div class="card" data-aos="fade-up">
-
-<h2>
-<i class="fa-solid fa-graduation-cap"></i>
-Education & Learning
-</h2>
-
-<div class="modern-list">
-<div>Peepal Prodigy School</div>
-<div>Frontend Development</div>
-<div>UI/UX Design</div>
-<div>Adobe Premiere Pro</div>
-<div>Animation Design</div>
-<div>Presentation Design</div>
-</div>
-
-</div>
+<!-- PROJECTS -->
 
 <div class="card" id="projects" data-aos="fade-up">
 
@@ -829,6 +957,7 @@ Featured Projects
 <div class="project-grid">
 
 <div class="project-box">
+
 <div class="project-image">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
 </div>
@@ -850,6 +979,7 @@ Designed and developed a responsive premium portfolio website using HTML and CSS
 </div>
 
 <div class="project-box">
+
 <div class="project-image">
 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
 </div>
@@ -874,51 +1004,7 @@ Created visually engaging slides, posters, and educational presentation designs 
 
 </div>
 
-<div class="card" data-aos="fade-up">
-
-<h2>
-<i class="fa-solid fa-timeline"></i>
-My Journey
-</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<h3>Started Learning Web Design</h3>
-<p>Explored HTML and CSS to create modern responsive websites.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Built Premium Portfolio</h3>
-<p>Created a luxury-themed personal portfolio website with modern UI effects.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Public Speaking Activities</h3>
-<p>Participated in school events and presentations to improve communication skills.</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card" data-aos="fade-up">
-
-<h2>
-<i class="fa-solid fa-star"></i>
-Areas of Interest
-</h2>
-
-<div class="modern-list">
-<div>Frontend Development</div>
-<div>Modern Web Design</div>
-<div>Luxury UI Design</div>
-<div>Animation Design</div>
-<div>Creative Presentations</div>
-<div>Digital Branding</div>
-</div>
-
-</div>
+<!-- CONTACT -->
 
 <div class="card" id="contact" data-aos="fade-up">
 
@@ -928,13 +1014,18 @@ Contact Me
 </h2>
 
 <form class="contact-form">
+
 <input type="text" placeholder="Your Name">
+
 <input type="email" placeholder="Your Email">
+
 <textarea placeholder="Your Message"></textarea>
-<button class="download-btn" type="submit">
+
+<button type="submit" class="download-btn">
 <i class="fa-solid fa-paper-plane"></i>
 Send Message
 </button>
+
 </form>
 
 </div>
@@ -947,32 +1038,64 @@ Send Message
 
 </div>
 
+<!-- SCRIPTS -->
+
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
 
+/* LOADER */
+
 window.addEventListener('load',()=>{
+
+setTimeout(()=>{
+document.getElementById('loader').style.opacity='0';
+
 setTimeout(()=>{
 document.getElementById('loader').style.display='none';
+},500);
+
 },1800);
+
 });
+
+/* AOS */
 
 AOS.init({
 duration:1000,
 once:true
 });
 
+/* CUSTOM CURSOR */
+
 const cursor=document.querySelector('.cursor');
 
 document.addEventListener('mousemove',(e)=>{
-if(cursor){
+
 cursor.style.left=e.clientX+'px';
 cursor.style.top=e.clientY+'px';
-}
+
+});
+
+/* CURSOR HOVER EFFECT */
+
+const hoverElements=document.querySelectorAll(
+'a, button, .project-box, .detail-box, .skill-pill'
+);
+
+hoverElements.forEach(el=>{
+
+el.addEventListener('mouseenter',()=>{
+cursor.classList.add('cursor-grow');
+});
+
+el.addEventListener('mouseleave',()=>{
+cursor.classList.remove('cursor-grow');
+});
+
 });
 
 </script>
 
 </body>
 </html>
-
